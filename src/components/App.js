@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
+import * as firebase from 'firebase'
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      speed: null
+    }
+  }
+
+  componentDidMount () {
+    const rootRef = firebase.database().ref().child('react')
+    const speedRef = rootRef.child('speed')
+    speedRef.on('value', snap => {
+      this.setState({
+        speed: snap.val()
+      })
+    })
+  }
+
   render () {
-    return <div>
-      <h1>Hello, World!</h1>
+    return <div className='App'>
+      <h1>{this.state.speed}</h1>
     </div>
   }
 }
