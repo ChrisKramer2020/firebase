@@ -22,6 +22,7 @@ class App extends Component {
   render () {
     return <div className='App'>
       <h1>{this.state.speed}</h1>
+      <p>What type of app is this</p>
     </div>
   }
 }
