@@ -26,6 +26,7 @@ class App extends Component {
       <p>What type of app do I want to build?</p>
       <p>What are we all about</p>
       <p>what we build here</p>
+      <p>space</p>
     </div>
   }
 }
